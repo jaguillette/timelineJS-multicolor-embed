@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>TimelineJS Embed</title>
+<meta charset="utf-8">
+<meta name="description" content="TimelineJS Embed">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<link rel="icon" type="image/png" href="https://cdn.knightlab.com/libs/purpleline/latest/img/favicon.png">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+<link title="timeline-styles" rel="stylesheet" href="./css/timeline.css">
+
+<script src="./js/timeline.js"></script>
+
+<base target="_blank">
+
+<!-- Style-->
+<style>
+html, body {
+    width: 100%;
+    height:100%;
+    padding: 0px;
+    margin: 0px;
+}
+#timeline-embed {
+    height: 100%;
+}
+.tl-timenav > .tl-timegroup:nth-of-type( 5) { background-color: #fbeaee !important; }
+.tl-timenav > .tl-timegroup:nth-of-type( 6) { background-color: #e8f8e9 !important; }
+.tl-timenav > .tl-timegroup:nth-of-type( 7) { background-color: #f7ecfa !important; }
+.tl-timenav > .tl-timegroup:nth-of-type( 8) { background-color: #eff7e2 !important; }
+.tl-timenav > .tl-timegroup:nth-of-type( 9) { background-color: #dbe9f9 !important; }
+.tl-timenav > .tl-timegroup:nth-of-type(10) { background-color: #f6f1d9 !important; }
+.tl-timenav > .tl-timegroup:nth-of-type(11) { background-color: #e1f7f9 !important; }
+.tl-timenav > .tl-timegroup:nth-of-type(12) { background-color: #fae9dd !important; }
+.tl-timenav > .tl-timegroup:nth-of-type(13) { background-color: #e8f8f1 !important; }
+.tl-timenav > .tl-timegroup:nth-of-type(14) { background-color: #f3f5e8 !important; }
+
+.tl-timegroup .tl-timegroup-message {
+  text-shadow: rgba(255,255,255,0.6) 0 2px 2px !important;
+}
+</style>
+<!-- HTML5 shim, for IE6-8 support of HTML elements--><!--[if lt IE 9]>
+<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body>
+  <!-- BEGIN Timeline Embed -->
+  <div id="timeline-embed"></div>
+  <!-- Override -->
+
+  <script type="text/javascript">
+  var url_string = window.location.href;
+  var url = new URL(url_string);
+  var sheet_id = url.searchParams.get("source");
+  timeline = new TL.Timeline('timeline-embed', 'https://docs.google.com/spreadsheets/d/' + sheet_id);
+  timeline.setZoom(4);
+  </script>
+  <!-- END Timeline Embed-->
+</body>
+</html>
