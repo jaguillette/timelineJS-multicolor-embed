@@ -57,9 +57,9 @@ html, body {
   var initial_zoom = url.searchParams.get("initial_zoom");
   var options = {
     hash_bookmark: true,
-    initial_zoom: initial_zoom,
   }
   timeline = new TL.Timeline('timeline-embed', 'https://docs.google.com/spreadsheets/d/' + sheet_id, options);
+  timeline.setZoom(initial_zoom);
   </script>
   <!-- END Timeline Embed-->
 </body>
